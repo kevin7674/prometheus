@@ -10,7 +10,7 @@ kubectl create -f prometheus-config-map.yaml
 kubectl create -f prometheus-deploy.yaml
 ```
 
-進入minion:
+進入GPU-node:
 ```
 git clone https://github.com/kevin7674/nvidia_smi_exporter.git
 cd nvidia_smi_exporter
