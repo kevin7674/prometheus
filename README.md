@@ -1,6 +1,6 @@
 # prometheus
 
-進入Master:
+啟動prometheus
 ```
 git clone https://github.com/kevin7674/prometheus.git
 cd prometheus
@@ -10,7 +10,7 @@ kubectl create -f prometheus-config-map.yaml
 kubectl create -f prometheus-deploy.yaml
 ```
 
-進入GPU-node:
+GPU-node:
 ```
 git clone https://github.com/kevin7674/nvidia_smi_exporter.git
 cd nvidia_smi_exporter
