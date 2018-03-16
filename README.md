@@ -5,7 +5,8 @@
 git clone https://github.com/kevin7674/prometheus.git
 cd prometheus
 kubectl create -f node-exporter.yaml
-kubectl create -f prometheus-configmap.yaml
+kubectl create -f rbac-setup.yaml.yaml
+kubectl create -f prometheus-config-map.yaml
 kubectl create -f prometheus-deploy.yaml
 ```
 
