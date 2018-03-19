@@ -13,6 +13,22 @@ echo "/nfs/prometheus *(rw,no_subtree_check,sync,all_squash,anonuid=0,anongid=0)
             path: "/nfs/prometheus"
 ```
 
+GPU-node:
+```
+git clone https://github.com/kevin7674/nvidia_smi_exporter.git
+cd nvidia_smi_exporter
+docker build -t="nvidia_smi_exporter:0" .
+nvidia-docker run -d --net="host" nvidia_smi_exporter:0 --restart=always
+```
+
+修改prometheus-config-map.yaml
+```
+      - job_name: 'nvidia_smi_exporter'
+        static_configs:
+        - targets: ['<GPU_NODE_IP>:9101']
+        - targets: ['<GPU_NODE_IP>:9101']
+```
+
 啟動prometheus
 ```
 git clone https://github.com/kevin7674/prometheus.git
@@ -23,12 +39,6 @@ kubectl create -f prometheus-config-map.yaml
 kubectl create -f prometheus-deploy.yaml
 ```
 
-GPU-node:
-```
-git clone https://github.com/kevin7674/nvidia_smi_exporter.git
-cd nvidia_smi_exporter
-docker build -t="nvidia_smi_exporter:0" .
-nvidia-docker run -d --net="host" nvidia_smi_exporter:0 --restart=always
-```
+
 
 
