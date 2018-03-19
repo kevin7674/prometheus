@@ -1,4 +1,10 @@
-# prometheus
+# prometheus on kubernetes
+
+創建nfs
+```
+mkdir -p /nfs/prometheus
+echo "/nfs/prometheus *(rw,no_subtree_check,sync,all_squash,anonuid=0,anongid=0)" >> /nfs/exports
+```
 
 修改prometheus-deploy.yaml
 ```
@@ -24,3 +30,5 @@ cd nvidia_smi_exporter
 docker build -t="nvidia_smi_exporter:0" .
 nvidia-docker run -d --net="host" nvidia_smi_exporter:0 --restart=always
 ```
+
+
