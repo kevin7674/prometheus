@@ -21,6 +21,12 @@ docker build -t="nvidia_smi_exporter:0" .
 nvidia-docker run -d --net="host" nvidia_smi_exporter:0 --restart=always
 ```
 
+下載
+```
+git clone https://github.com/kevin7674/prometheus.git
+cd prometheus
+```
+
 修改prometheus-config-map.yaml
 ```
       - job_name: 'nvidia_smi_exporter'
@@ -31,8 +37,7 @@ nvidia-docker run -d --net="host" nvidia_smi_exporter:0 --restart=always
 
 啟動prometheus
 ```
-git clone https://github.com/kevin7674/prometheus.git
-cd prometheus
+
 kubectl create -f node-exporter.yaml
 kubectl create -f rbac-setup.yaml.yaml
 kubectl create -f prometheus-config-map.yaml
