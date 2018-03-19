@@ -1,5 +1,12 @@
 # prometheus
 
+修改prometheus-deploy.yaml
+```
+          nfs:
+            server: <NFS_IP>
+            path: "/nfs/prometheus"
+```
+
 啟動prometheus
 ```
 git clone https://github.com/kevin7674/prometheus.git
@@ -15,5 +22,5 @@ GPU-node:
 git clone https://github.com/kevin7674/nvidia_smi_exporter.git
 cd nvidia_smi_exporter
 docker build -t="nvidia_smi_exporter:0" .
-nvidia-docker run -d --net="host" nvidia_smi_exporter:0
+nvidia-docker run -d --net="host" nvidia_smi_exporter:0 --restart=always
 ```
