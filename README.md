@@ -35,9 +35,8 @@ cd prometheus
         - targets: ['<GPU_NODE_IP>:9101']
 ```
 
-啟動prometheus
+佈署prometheus
 ```
-
 kubectl create -f node-exporter.yaml
 kubectl create -f rbac-setup.yaml.yaml
 kubectl create -f prometheus-config-map.yaml
