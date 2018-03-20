@@ -6,13 +6,6 @@ mkdir -p /nfs/prometheus
 echo "/nfs/prometheus *(rw,no_subtree_check,sync,all_squash,anonuid=0,anongid=0)" >> /nfs/exports
 ```
 
-修改prometheus-deploy.yaml
-```
-          nfs:
-            server: <NFS_IP>
-            path: "/nfs/prometheus"
-```
-
 到每台GPU-node:
 ```
 git clone https://github.com/kevin7674/nvidia_smi_exporter.git
@@ -25,6 +18,13 @@ nvidia-docker run -d --net="host" nvidia_smi_exporter:0 --restart=always
 ```
 git clone https://github.com/kevin7674/prometheus.git
 cd prometheus
+```
+
+修改prometheus-deploy.yaml
+```
+          nfs:
+            server: <NFS_IP>
+            path: "/nfs/prometheus"
 ```
 
 修改prometheus-config-map.yaml
