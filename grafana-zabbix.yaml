@@ -7,7 +7,7 @@ metadata:
     kubernetes.io/cluster-service: 'true'
     kubernetes.io/name: monitoring-grafana
   name: monitoring-grafana
-  namespace: monitoring
+  #namespace: monitoring
 spec:
   type: NodePort
   # In a production setup, we recommend accessing Grafana through an external Loadbalancer
@@ -26,7 +26,7 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: monitoring-grafana
-  namespace: monitoring
+  #namespace: monitoring
 spec:
   replicas: 1
   template:
