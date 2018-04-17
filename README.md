@@ -1,11 +1,5 @@
 # prometheus on kubernetes
 
-創建nfs空間
-```
-mkdir -p /nfs/prometheus
-echo "/nfs/prometheus *(rw,no_subtree_check,sync,all_squash,anonuid=0,anongid=0)" >> /nfs/exports
-```
-
 到每台GPU-node
 ```
 git clone https://github.com/kevin7674/nvidia_smi_exporter.git
@@ -14,6 +8,12 @@ cd nvidia_smi_exporter
 
 vi /etc/rc.local
 加入./nvidia_smi_exporter 9101 &
+```
+
+創建nfs空間
+```
+mkdir -p /nfs/prometheus
+echo "/nfs/prometheus *(rw,no_subtree_check,sync,all_squash,anonuid=0,anongid=0)" >> /nfs/exports
 ```
 
 下載
