@@ -10,7 +10,7 @@ cd nvidia_smi_exporter
 
 ### vi /etc/rc.local
 ```
-加入./nvidia_smi_exporter 9101 &
+./nvidia_smi_exporter 9101 &
 ```
 
 
