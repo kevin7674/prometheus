@@ -14,9 +14,9 @@ cd nvidia_smi_exporter
 ```
 ./nvidia_smi_exporter 9101 &
 ```
- 
- 
- 
+  
+  
+  
 ## 回到Master
  
 ### 創建nfs空間
