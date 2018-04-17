@@ -1,6 +1,6 @@
 # prometheus on kubernetes
 
-到每台GPU-node
+##到每台GPU-node
 ```
 git clone https://github.com/kevin7674/nvidia_smi_exporter.git
 cd nvidia_smi_exporter
